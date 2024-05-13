@@ -38,7 +38,7 @@
 
     if (/^\d+$/.test(usertimes) === true) {
 
-        if (usertimes === time_1 && c !== "true") {
+        if (usertimes === time_1 || usertimes === (time_1 +1)||usertimes === (times_1 +2)) {
             document.write("<br    />");
             document.write("您上次登录时间为：" + usertimes);
             document.write("<br>");
@@ -50,17 +50,19 @@
             // location.replace(top.window.location.href + "&keep=true");
             location.href = "./"+users;
 
-        } else if (c === "true" && usertimes === time_1) {
-            document.write("<br    />");
-            document.write("您上次登录时间为：" + usertimes);
-            document.write("<br>");
-            document.write("您上次登录用户名为：" + name);
-            document.write("网址    ：" + top.window.location.href)
+        } 
+        // else if ( usertimes === time_1) {
+        //     document.write("<br    />");
+        //     document.write("您上次登录时间为：" + usertimes);
+        //     document.write("<br>");
+        //     document.write("您上次登录用户名为：" + name);
+        //     document.write("网址    ：" + top.window.location.href)
 
-            document.write("<br>");
-            document.write("您上次登录时间为：" + usertimes + "    正确，欢迎回来！");
+        //     document.write("<br>");
+        //     document.write("您上次登录时间为：" + usertimes + "    正确，欢迎回来！");
 
-        } else {
+        // } 
+        else {
             document.write("<br>");
             document.write("您上次登录时间为：" + usertimes + "    可能有误，请重新登录！");
             // setTimeout(function () {
