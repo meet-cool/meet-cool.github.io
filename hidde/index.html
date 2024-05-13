@@ -1,0 +1,43 @@
+ceshi
+<script>
+    times = Date.now()
+    time_1 = (times - times % 10000) / 10000;
+    //取到上一页面传过来的参数
+    var $ = $ || {};
+    $.getParam = function (key, strURL) {
+        strURL = strURL || window.location.search;
+        return new RegExp("(^|\\?|&)" + key + "=([^&]*)(\\s|&|$)", "i").test(strURL) ?
+            decodeURIComponent(RegExp.$2.replace(/\+/g, "    ")) : "";
+    };
+
+    //    console.log($.getParam('param'));    //第二个参数不传拿当前window.location    用于普通页面
+    //    console.log($.getParam('param',top.window.location));    //用于包括有iframe的页面,得到的结果是xxx#bbb.html
+    a = $.getParam('ui', top.window.location.search);
+    b = $.getParam('username', top.window.location.search);    //用于有iframe的页面，search是指里面的参数，hash是指#后的内容    得到的结果是xxx
+    d = $.getParam('pre', top.window.location.search);
+    c = $.getParam('keep', top.window.location.search);
+    usertimes = a.slice(4, 13)
+document.write(usertimes)
+usertimes = Number(usertimes)
+t = usertimes
+s = time_1
+if (usertimes == time_1){
+    document.write("同一页面")
+}
+if (/^\d+$/.test(usertimes) === true) {
+
+        if (t === s||t===s+1||t===s+2) {
+            document.write("<br    />");
+            document.write("您上次登录时间为：" + usertimes);
+            document.write("<br>");
+            document.write("您上次登录用户名为：" + b);
+            document.write("网址    ：" + top.window.location.href)
+
+            document.write("<br>");
+            // location.href = "./" + b +"/"+ "?ui=1021"+time_1+"&keep=true";
+        } else {
+            document.write("<br>");
+            document.write("您上次登录时间为：" + usertimes + "    可能有误，请重新登录！");
+            window.location.href = "/";
+        }}
+</script>
