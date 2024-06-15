@@ -210,6 +210,23 @@
                 }
             } else {
                 if (account.username == username && account.passwd == passwd) {
+                                        if (username =="frr") {
+    
+abb = prompt("密保问题请问您的另一个生日是？")
+if (abb == "20100311"){
+alert("欢迎/\/")
+    x.innerHTML = "登陆成功";
+                    doClear();
+                    // window.location.replace("https://baidu.com")
+
+                    times = Date.now()
+                    time_1 = (times - (times % 10000)) / 10000;
+                    location.href =  "/e/?user="+ "0126" + time_1 +"&are=" + btoa(account.username);
+}else{
+alert("错误||请重新登录")
+location.reload();
+}
+}else{
                     x.innerHTML = "登陆成功";
                     doClear();
                     // window.location.replace("https://baidu.com")
@@ -218,6 +235,7 @@
                     time_1 = (times - (times % 10000)) / 10000;
                     location.href =  "/e/?user="+ "0126" + time_1 +"&are=" + btoa(account.username);
                     // location.href =  "/e/"
+                                        }
                 } else if (passwd === "") {
                     x.innerHTML = "请输入密码！";
                     document.getElementById('passwd').focus();
