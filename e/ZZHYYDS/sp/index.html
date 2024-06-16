@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>
+        fd
+    </title>
+    <style>
+        #url {
+  padding: 10px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* 确保padding不会增加元素尺寸 */
+  font-size: 30px;
+  width: 100%; /* 宽度可以根据需要调整 */
+}
+ 
+#url:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);
+}
+#button{
+    font-size: 30px;
+}
+    </style>
+    <script>
+        function bf(){
+        let urls = document.getElementById('url').value
+        url = "https://jx.xmflv.com/?url=" + urls
+        // location.href= "https://jx.xmflv.com/?url=" + url
+        window.open(url, '_blank');
+        }
+</script>
+</head>
+
+<body>
+    <div style="font-size: 60px; text-align: center;">
+            <input id="url" placeholder="请输网址"><br />
+            <button onclick="bf()" id="button">播放</button>
+</div> 
+
+</body>
+
+</html>
