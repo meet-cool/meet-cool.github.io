@@ -5,7 +5,7 @@
     <title></title>
     <!-- <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
     <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1"> -->
-    
+
     <style>
         input::-webkit-input-placeholder {
             /* WebKit browsers，webkit内核浏览器 */
@@ -131,6 +131,7 @@
             width: 100%;
             color: #ffffff7c;
             background-color: rgba(0, 0, 0, 0.521);
+            min-height: 100%;
         }
     </style>
 
@@ -175,8 +176,8 @@
 
     <script type="text/javascript" src="/js/base64.js"></script>
     <script type="text/javascript">
-            // alert(Base64.encode("ds"))
-            // alert(Base64.decode("ZGFzcw=="))
+        // alert(Base64.encode("ds"))
+        // alert(Base64.decode("ZGFzcw=="))
         var $ = $ || {};
         $.getParam = function (key, strURL) {
             strURL = strURL || window.location.search;
@@ -190,7 +191,7 @@
         b = $.getParam('pre', top.window.location.search);
 
         console.log(a)
-        document.getElementById('username').value =atob(a);
+        document.getElementById('username').value = atob(a);
         document.getElementById('passwd').value = atob(b);
         let accountAll = []
         function login() {
@@ -210,32 +211,32 @@
                 }
             } else {
                 if (account.username == username && account.passwd == passwd) {
-                                        if (username =="frr") {
-    
-abb = prompt("密保问题请问您的另一个生日是？")
-if (abb == "20100311"){
-alert("欢迎/\/")
-    x.innerHTML = "登陆成功";
-                    doClear();
-                    // window.location.replace("https://baidu.com")
+                    if (username == "frr") {
 
-                    times = Date.now()
-                    time_1 = (times - (times % 10000)) / 10000;
-                    location.href =  "/e/?user="+ "0126" + time_1 +"&are=" + btoa(account.username);
-}else{
-alert("错误||请重新登录")
-location.reload();
-}
-}else{
-                    x.innerHTML = "登陆成功";
-                    doClear();
-                    // window.location.replace("https://baidu.com")
+                        abb = prompt("密保问题请问您的另一个生日是？")
+                        if (abb == "20100311") {
+                            alert("欢迎/\/")
+                            x.innerHTML = "登陆成功";
+                            doClear();
+                            // window.location.replace("https://baidu.com")
 
-                    times = Date.now()
-                    time_1 = (times - (times % 10000)) / 10000;
-                    location.href =  "/e/?user="+ "0126" + time_1 +"&are=" + btoa(account.username);
-                    // location.href =  "/e/"
-                                        }
+                            times = Date.now()
+                            time_1 = (times - (times % 10000)) / 10000;
+                            location.href = "/e/?user=" + "0126" + time_1 + "&are=" + btoa(account.username);
+                        } else {
+                            alert("错误||请重新登录")
+                            location.reload();
+                        }
+                    } else {
+                        x.innerHTML = "登陆成功";
+                        doClear();
+                        // window.location.replace("https://baidu.com")
+
+                        times = Date.now()
+                        time_1 = (times - (times % 10000)) / 10000;
+                        location.href = "/e/?user=" + "0126" + time_1 + "&are=" + btoa(account.username);
+                        // location.href =  "/e/"
+                    }
                 } else if (passwd === "") {
                     x.innerHTML = "请输入密码！";
                     document.getElementById('passwd').focus();
