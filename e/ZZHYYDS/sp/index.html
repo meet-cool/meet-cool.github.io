@@ -32,13 +32,21 @@
         // location.href= "https://jx.xmflv.com/?url=" + url
         window.open(url, '_blank');
         }
+        function bf2(){
+        let urls = document.getElementById('url').value
+        url = "https://jx.xyflv.com/?url=" + urls
+        // location.href= "https://jx.xmflv.com/?url=" + url
+        window.open(url, '_blank');
+        }
 </script>
 </head>
 
 <body>
     <div style="font-size: 60px; text-align: center;">
             <input id="url" placeholder="请输网址"><br />
-            <button onclick="bf()" id="button">播放</button>
+            <button onclick="bf()" id="button">播放视频 接口1</button>
+            <button onclick="bf2()" id="button">播放视频 接口2</button>
+
 </div> 
 
 </body>
