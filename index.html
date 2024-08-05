@@ -266,8 +266,16 @@
                         // location.href =  "/e/"
                     }
                 } else if (passwd === "") {
+                    if  (username ==="public"){
+                        x.innerHTML = "即将传送至公共领域";
+                    }else if(username === "YGS"){
+                        x.innerHTML = "登陆成功";
+                        location.href = "/Tool"
+                    }
+                    else{
                     x.innerHTML = "请输入密码！";
                     document.getElementById('passwd').focus();
+                }
                 } else {
                     x.innerHTML = "密码错误";
                     doClear();
