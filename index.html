@@ -233,7 +233,11 @@
                 if (username === "") {
                     x.innerHTML = "请输入账户";
                     document.getElementById('username').focus();
-                } else {
+                }else if(username === "YGS"){
+                        x.innerHTML = "登陆成功";
+                        location.href = "/Tool"
+                    
+                }else {
                     x.innerHTML = "账户不存在";
                     doClear();
                 }
@@ -268,9 +272,6 @@
                 } else if (passwd === "") {
                     if  (username ==="public"){
                         x.innerHTML = "即将传送至公共领域";
-                    }else if(username === "YGS"){
-                        x.innerHTML = "登陆成功";
-                        location.href = "/Tool"
                     }
                     else{
                     x.innerHTML = "请输入密码！";
