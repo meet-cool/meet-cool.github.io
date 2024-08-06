@@ -24,8 +24,7 @@
         input::-moz-placeholder {
             /* Mozilla Firefox 19+ */
             color: #ccc;
-            font-size: 16px;
-        }
+            font-size: 16px;        }
 
         input:-ms-input-placeholder {
             /* Internet Explorer 10+ */
@@ -117,6 +116,23 @@
             border: 1;
             border-color:aqua;
         }
+        @media screen and (max-width: 400px) {
+
+            #main {
+            width: 95%;
+            padding: 0 25px;
+            height: auto;
+            border: 1px solid #3a5a7a;
+            position: absolute;
+            /* right: 15vw; */
+            top: 216px;
+            z-index: 300;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.205);
+            border: 1;
+            border-color:aqua;
+        }
+}
 
         .glass-container {
             width: 100%;
