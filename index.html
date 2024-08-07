@@ -101,7 +101,7 @@
             color: rgb(255, 255, 255) !important;
             background-color: rgba(0, 0, 0, 0);
         }
-
+        @media screen and (mix-width: 401px) {
         #main {
             width: 330px;
             padding: 0 25px;
@@ -115,7 +115,11 @@
             background-color: rgba(0, 0, 0, 0.205);
             border: 1;
             border-color:aqua;
-        }
+        }}
+        /* 注意，
+        @media screen and (max-width: 400px) {页面小于400}
+        @media screen and (mix-width: 400px) {页面大于400}
+        */
         @media screen and (max-width: 400px) {
 
             #main {
