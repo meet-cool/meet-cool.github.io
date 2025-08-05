@@ -3,10 +3,13 @@
 
 <head>
     <title>综合工具</title>
-    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <link rel="icon" href="favicon.ico"> -->
+    <!-- <link rel="apple-touch-icon" href="favicon.ico"> -->
 
-    <!-- <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
 
     <style>
         input::-webkit-input-placeholder {
@@ -35,110 +38,60 @@
     </style>
     <style>
         body {
-            background-color: #3f3f3fce
-
+            background-color: #3f3f3fce;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         * {
             border: 0;
             margin: 0;
             padding: 0;
-
+            box-sizing: border-box;
         }
 
-        @media screen and (min-width: 400px) {
-            body{
-                height: 230%;
-            }
-            .mbut {
-                /* margin: 42px auto 20px; */
-                font-size: 18px;
-                width: 80%;
-                height: 50px;
-                display: block;
-                color: rgb(255, 255, 255);
-                cursor: pointer;
-                background-color: #08f000a2;
-                border-radius: 4px;
-                border: 1;
-                border-color: aqua;
-            }
-
-            .un {
-                color: #fff;
-                border-width: 1px;
-                border-style: solid;
-                border-color: rgba(218, 218, 218, 0.493);
-                margin-bottom: 18px;
-                width: 80%;
-                height: 44px;
-                line-height: 44px;
-                position: relative;
-                border-radius: 4px;
-                background-color: #00000000;
-            }
-
-            #main {
-                width: 330px;
-                padding: 0 25px;
-                height: auto;
-                border: 1px solid #3a5a7a;
-                position: absolute;
-                right: 15vw;
-                top: 216px;
-                z-index: 300;
-                border-radius: 10px;
-                background-color: rgba(0, 0, 0, 0.205);
-                border: 1;
-                border-color: aqua;
-            }
+        .mbut {
+            font-size: 18px;
+            width: 100%;
+            max-width: 330px;
+            height: 50px;
+            display: block;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            background-color: #08f000a2;
+            border-radius: 4px;
+            border: 1px solid aqua;
+            margin: 20px auto;
         }
 
-        @media screen and (max-width: 400px) {
-            .mbut {
-                margin: 42px auto 20px;
-                font-size: 18px;
-                width: 80%;
-                height: 50px;
-                display: block;
-                color: rgb(255, 255, 255);
-                cursor: pointer;
-                background-color: #08f000a2;
-                border-radius: 4px;
-                border: 1;
-                border-color: aqua;
-            }
-
-            .un {
-                color: #fff;
-                border-width: 1px;
-                border-style: solid;
-                border-color: rgba(218, 218, 218, 0.493);
-                margin-bottom: 18px;
-                width: 330px;
-                height: 44px;
-                line-height: 44px;
-                position: relative;
-                border-radius: 4px;
-                background-color: #00000000;
-            }
-
-            #main {
-                width: 95%;
-                padding: 0 8px;
-                height: auto;
-                border: 1px solid #3a5a7a;
-                position: absolute;
-                /* right: 15vw; */
-                top: 60px;
-                z-index: 300;
-                border-radius: 10px;
-                background-color: rgba(0, 0, 0, 0.205);
-                border: 1;
-                border-color: aqua;
-            }
+        .un {
+            color: #fff;
+            border: 1px solid rgba(218, 218, 218, 0.493);
+            margin-bottom: 18px;
+            width: 100%;
+            max-width: 330px;
+            height: 44px;
+            line-height: 44px;
+            border-radius: 4px;
+            background-color: #00000000;
+            margin-left: auto;
+            margin-right: auto;
         }
 
+        #main {
+            width: 100%;
+            max-width: 380px;
+            padding: 20px;
+            height: auto;
+            border: 1px solid aqua;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.205);
+            margin: 60px auto 0;
+            z-index: 9999;
+        }
 
         .title-h1 {
             margin-top: 1.6em;
@@ -159,29 +112,15 @@
             line-height: 20px;
         }
 
-
-
-
         .boxt {
             font-size: 14px;
             outline: none;
-            width: 200px;
+            width: calc(100% - 36px);
             height: 44px;
-            position: absolute;
-            left: 18px;
-            top: 0px;
+            padding: 0 18px;
             color: rgb(255, 255, 255) !important;
             background-color: rgba(0, 0, 0, 0);
         }
-
-
-
-        /* 注意，
-        @media screen and (max-width: 400px) {页面小于400}
-        @media screen and (mix-width: 400px) {页面大于400}
-        
-        */
-
 
         .glass-container {
             width: 100%;
@@ -193,48 +132,87 @@
             border-radius: 32px;
             backdrop-filter: blur(8px);
             background-color: rgba(0, 0, 0, 0.521);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            z-index: 100;
         }
 
-        /* .footer {
-            text-align: center;
-            position: absolute;
-            bottom: 3px;
-            display: flex;
-            width: 100%;
-            color: #ffffff7c;
-            background-color: rgba(0, 0, 0, 0.521);
-            min-height: 100%;
-        } */
         .footer {
-            margin: 0px;
-            padding: 0px;
             background-color: rgba(37, 37, 37, 0.521);
             width: 100%;
-            /* background-color: rgb(35, 36, 38); */
-            position: fixed;
-            bottom: 0px;
-            left: 0px;
             text-align: center;
             color: #ffffff7c;
-            border: 1;
-            border-color: aqua;
-            z-index: 300;
+            border-top: 1px solid aqua;
+            padding: 10px 0;
+            margin-top: auto;
+            z-index: 9999;
+        }
+
+        #login {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .links a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* 电脑端样式 */
+        @media screen and (min-width: 768px) {
+            body {
+                position: relative;
+                min-height: 100vh;
+            }
+
+            #main {
+                position: absolute;
+                right: 15vw;
+                top: 50%;
+                transform: translateY(-50%);
+                margin: 0;
+            }
+
+            .glass-container {
+                justify-content: flex-start;
+                padding-left: 20px;
+            }
+
+            .footer {
+                position: fixed;
+                bottom: 0;
+            }
+        }
+
+        /* 手机端样式 */
+        @media screen and (max-width: 767px) {
+            #main {
+                margin: 60px auto 0;
+                position: static;
+                transform: none;
+            }
         }
     </style>
-
 </head>
 
 <body>
-
     <div class="glass-container" id="glass" style="text-align: center;">
-        <!-- <h1 class="in" style="color:green"> &nbsp; &nbsp; &nbsp; &nbsp;GEEK SPACE</h1> -->
         <h1 class="in" style="font-size: 30px;"> &nbsp; &nbsp; &nbsp; &nbsp;甘年磨一剑&nbsp; &nbsp; &nbsp; &nbsp;</h1>
     </div>
 
     <div id="main">
-        <div id="login" style="margin-right: auto; margin-left: auto; width: 330px;">
+        <div id="login">
             <form id="form1">
-
                 <h1 class="title-h1">
                     综合工具<br>统一服务认证</h1>
                 <h2 class="title-h2" style="margin-top: 10px;">账户登录
@@ -248,30 +226,22 @@
                     <input type="password" name="Pwd" id="passwd" placeholder="登录密码" autocomplete="off" class="boxt">
                 </div>
                 <button class="mbut" onclick="login()" id="Submit" type="button">登 &nbsp; &nbsp; 录</button>
-                <div style="text-align: center;">
-                    <!-- <a href="Untitled-2.html?user=test">test</a> -->
+                <div class="links">
                     <a href="https://forms.office.com/r/uD7XPuB39s">忘记密码</a>
-                    <a onclick="
-                     alert(`联系方式>>>\n=======\nE-mail:\n1.rocket-888@outlook.com\n2.meet-cool@outlook.com\n3.QQ:3391596958`)
-                     ">
-                     <!-- <b style="color:#0000ff;">连系管理员</b></a> -->
+                    <a
+                        onclick="alert(`联系方式>>>\n=======\nE-mail:\n1.rocket-888@outlook.com\n2.meet-cool@outlook.com\n3.QQ:3391596958`)">联系管理员</a>
                 </div>
-                <br />
-
             </form>
         </div>
-
     </div>
-    <div class="footer">
-        <p>Copyright © 2022 - 2028  a<br />
-            All Rights Reserved</p>
 
+    <div class="footer">
+        <p>Copyright © 2022 - 2028 a<br />
+            All Rights Reserved</p>
     </div>
 
     <script type="text/javascript" src="/js/base64.js"></script>
     <script type="text/javascript">
-        // alert(Base64.encode("ds"))
-        // alert(Base64.decode("ZGFzcw=="))
         var $ = $ || {};
         $.getParam = function (key, strURL) {
             strURL = strURL || window.location.search;
@@ -279,8 +249,6 @@
                 decodeURIComponent(RegExp.$2.replace(/\+/g, "    ")) : "";
         };
 
-        //    console.log($.getParam('param'));    //第二个参数不传拿当前window.location    用于普通页面
-        //    console.log($.getParam('param',top.window.location));    //用于包括有iframe的页面,得到的结果是xxx#bbb.html
         a = $.getParam('username', top.window.location.search);
         b = $.getParam('pre', top.window.location.search);
 
@@ -311,7 +279,7 @@
                 if (account.username == username && account.passwd == passwd) {
                     if (username == "frr") {
 
-                        abb = prompt("密保问题<br>请问你的小名是？")
+                        abb = prompt("密保问题\n请问你的小名是？")
                         if (abb == "茹茹") {
                             alert("欢迎/\/")
                             x.innerHTML = "登陆成功";
@@ -351,7 +319,6 @@
             }
         }
 
-
         function doClear() {
             let inputs = document.getElementsByTagName("input");
             for (let i = 0; i < inputs.length; i++) {
@@ -373,16 +340,7 @@
         accountAll.push(dna);
         accountAll.push(ena);
     </script>
-    <!-- <script src="/script/point.js"></script> -->
-   <script src="/script/greenrain.js"></script>
-    <!-- <script src="./layui/layui.js"></script>
-<script>
-layer.open({
-  title: '在线调试'
-  ,content: '配置各种参数，试试效果'
-});     
-  
-</script> -->
+    <script src="/script/greenrain.js"></script>
 </body>
 
 </html>
